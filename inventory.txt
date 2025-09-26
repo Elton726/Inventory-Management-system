@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ID: 4
+PRODUCT NAME: nkhuni
+QUANTITY: 801
+PRICE: K60.00 each
+
+ID: 1
+PRODUCT NAME: tomatoes
+QUANTITY: 5600
+PRICE: K500.00 each
+
+
+ID: 2
+PRODUCT NAME: nthochi
+QUANTITY: 500
+PRICE: K1500.0
+
+
+
+ID: 6
+PRODUCT NAME: chinangwa
+QUANTITY: 1000
+PRICE: K500.0
+
+ID: 3
+PRODUCT NAME: tangerines
+QUANTITY: 10
+PRICE: K200.00 each
+
+ID: 5
+PRODUCT NAME: guavas
+QUANTITY: 700
+PRICE: K900.00 each
+
