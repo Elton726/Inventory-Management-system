@@ -8,7 +8,7 @@ public class UpdateItem extends JFrame {
     private JButton updateButton, cancelButton;
 
     public UpdateItem() {
-        ImageIcon update = new ImageIcon("icons/update.png");
+        ImageIcon update = new ImageIcon(getClass().getResource("update.png"));
 
         setTitle("Update Inventory Item");
         setSize(600, 400); // Adjusted height to match AddItem.java
@@ -206,7 +206,7 @@ public class UpdateItem extends JFrame {
             }
 
             boolean success = Database.updateFile(searchTerm, newName, newQuantity, newPrice);
-            ImageIcon updated = new ImageIcon("icons/updated.png");
+            ImageIcon updated = new ImageIcon(getClass().getResource("updated.png"));
 
             if (success) {
                 JOptionPane.showMessageDialog(this, "✅ Product updated successfully!", "Success", JOptionPane.INFORMATION_MESSAGE, updated);

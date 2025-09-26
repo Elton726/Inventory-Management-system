@@ -15,7 +15,7 @@ public class AddItem {
     private ArrayList<Double> itemPrices = new ArrayList<>();
 
     public AddItem() {
-        ImageIcon add = new ImageIcon("icons/addItem.png");
+        ImageIcon add = new ImageIcon(getClass().getResource("addItem.png"));
         // ✅ Frame setup
         frame = new JFrame("Add New Item");
         frame.setSize(600, 400); // Adjusted height to make the window smaller
@@ -243,7 +243,7 @@ public class AddItem {
         Database.writeToFile(name, quantity, price);
 
         clearFields();
-        ImageIcon added = new ImageIcon("icons/added.png");
+        ImageIcon added = new ImageIcon(getClass().getResource("added.png"));
 
         // ✅ Show confirmation dialog and return to HomePage
         int choice = JOptionPane.showOptionDialog(frame, "Item details\n" + name + " - Quantity: " + quantity + ", Price: MWK" + price,

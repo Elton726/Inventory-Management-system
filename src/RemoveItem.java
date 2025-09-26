@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -21,7 +20,7 @@ public class RemoveItem {
 
     // Method to display the remove dialog
     public void showRemoveDialog() {
-        Icon remove = new ImageIcon("icons/remove.png");
+        Icon remove = new ImageIcon(getClass().getResource("remove.png"));
 
         while (true) { // Loop to keep showing the dialog until valid input or cancel
             // First dialog: Ask for item ID or name
@@ -52,7 +51,7 @@ public class RemoveItem {
                 // If the input is valid, proceed with the removal
                 boolean isRemoved = Database.deleteItem(itemToRemove.trim());
 
-                ImageIcon removed=new ImageIcon("icons/removed.png");
+                ImageIcon removed=new ImageIcon(getClass().getResource("removed.png"));
 
 
                 if (isRemoved) {

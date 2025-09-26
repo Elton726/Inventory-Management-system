@@ -23,7 +23,7 @@ public class ItemSearchApp {
 
     // Method to set up the user interface
     private void initializeUI() {
-        ImageIcon search = new ImageIcon("icons/search.png");
+        ImageIcon search = new ImageIcon(getClass().getResource("search.png"));
 
         // Create a new JFrame with the title "Item Search App"
         frame = new JFrame("Search Item");

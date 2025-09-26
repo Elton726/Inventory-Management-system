@@ -35,7 +35,7 @@ public class ViewReport {
             }
         }
 
-        ImageIcon viewReport = new ImageIcon("icons/viewReport.png");
+        ImageIcon viewReport = new ImageIcon(ViewReport.class.getResource("viewReport.png"));
         // Create the stock report window
         JFrame frame = new JFrame("Stock Report");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

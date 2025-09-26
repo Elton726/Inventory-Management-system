@@ -11,7 +11,7 @@ public class HomePage extends JFrame {
 
     // Private constructor to enforce singleton pattern
     private HomePage() {
-        ImageIcon ico = new ImageIcon("icons/inventory.png"); // Frame icon
+        ImageIcon ico = new ImageIcon(getClass().getResource("inventory.png"));
         Database inventoryManager = new Database();
         removeItem = new RemoveItem(inventoryManager);
 
@@ -74,7 +74,7 @@ public class HomePage extends JFrame {
         headerPanel.add(titlePanel, BorderLayout.CENTER);
 
         // Load the splash image
-        ImageIcon splashImage = new ImageIcon("icons/inventory.png");
+        ImageIcon splashImage = new ImageIcon(getClass().getResource("inventory.png"));
         JLabel splashLabel = new JLabel(splashImage);
         splashLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
@@ -185,10 +185,10 @@ public class HomePage extends JFrame {
             });
 
             // Set icons for buttons
-            ImageIcon remove = new ImageIcon("icons/remove.png");
-            ImageIcon add = new ImageIcon("icons/addItem.png");
-            ImageIcon update = new ImageIcon("icons/update.png");
-            ImageIcon viewReport = new ImageIcon("icons/viewReport.png");
+            ImageIcon remove = new ImageIcon(getClass().getResource("remove.png"));
+            ImageIcon add = new ImageIcon(getClass().getResource("addItem.png"));
+            ImageIcon update = new ImageIcon(getClass().getResource("update.png"));
+            ImageIcon viewReport = new ImageIcon(getClass().getResource("viewReport.png"));
 
             switch (label) {
                 case "View Reports":
