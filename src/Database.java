@@ -4,7 +4,30 @@ import java.util.*;
 import java.util.regex.*;
 
 public class Database {
-    private static final String FILE_NAME = "inventory.txt";
+    private static final String APP_DATA_DIR = getAppDataPath();
+    private static final String FILE_NAME = APP_DATA_DIR + "inventory.txt";
+
+    // Get writable application data directory
+    private static String getAppDataPath() {
+        String userHome = System.getProperty("user.home");
+        String appName = "InventoryManagementSystem";
+        String os = System.getProperty("os.name").toLowerCase();
+
+        String appDataPath;
+        if (os.contains("win")) {
+            appDataPath = userHome + "\\" + appName + "\\";
+        } else {
+            appDataPath = userHome + "/." + appName.toLowerCase() + "/";
+        }
+
+        // Create directory if it doesn't exist
+        File dir = new File(appDataPath);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+
+        return appDataPath;
+    }
 
     // Method to write a new item to the inventory file
     public static void writeToFile(String name, Integer quantity, Number price) {
@@ -219,8 +242,6 @@ public class Database {
                     found = true; // Mark as found, preventing multiple updates
 
                     if (!nameChangeAllowed && !currentName.equalsIgnoreCase(newName)) {
-                        // ❌ Prevent changes and display a warning
-                        //JOptionPane.showMessageDialog(null, "⚠ Cannot rename to '" + newName + "' as it already exists under a different product.", "Update Error", JOptionPane.WARNING_MESSAGE);
                         return false; // Abort update
                     }
 
@@ -259,8 +280,6 @@ public class Database {
         }
         return found;
     }
-
-
 
     // Method to overwrite the file with updated content
     private static boolean overwrite(List<String> items) {
@@ -355,5 +374,10 @@ public class Database {
         }
 
         return inventoryList;
+    }
+
+    // Helper method to get the current file path (for debugging)
+    public static String getFilePath() {
+        return FILE_NAME;
     }
 }
